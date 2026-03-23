@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Relive the rhythm of the world's most legendary music festivals. Explore the history, rare footage, and iconic performances of Woodstock '69, Live Aid '85, and Monsters of Rock '91."
+        />
+        <meta
+            name="keywords"
+            content="music festivals, music history, Woodstock 1969, Live Aid 1985, Monsters of Rock 1991, iconic concerts, classic rock, music archives, retro performances"
+        />
+        <title>RetroFest | Home</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                plugins: [
+                    function ({ addVariant }) {
+                        addVariant("hc", [
+                            "&.high-contrast",
+                            ".high-contrast &",
+                        ]);
+                    },
+                ],
+            };
+        </script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;700&family=Metal+Mania&family=Righteous&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" href="./assets/icons/Retro_icon.svg" />
+        <script src="data.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+
+    <body
+        class="flex flex-col min-h-screen bg-transparent text-gray-900 dark:bg-transparent dark:text-gray-100 hc:bg-black hc:text-white transition-colors duration-300"
+    >
+        <div
+            id="cookie-banner"
+            class="fixed bottom-0 left-0 w-full bg-gray-900 dark:bg-black hc:bg-black hc:border-t hc:border-white text-white p-4 z-50 transform translate-y-full transition-transform duration-300 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-gray-800"
+        >
+            <p class="text-sm">
+                We use cookies to ensure you get the best experience on our
+                website and to save your preferences.
+                <button
+                    data-action="legal"
+                    data-payload="privacy"
+                    class="underline text-indigo-400 hover:text-indigo-300 hc:text-[#00ffff] hc:hover:text-white"
+                >
+                    Read Policy</button
+                >.
+            </p>
+            <div class="flex gap-2">
+                <button
+                    data-action="close-cookies"
+                    class="bg-green-600 hover:bg-green-700 hc:bg-white hc:text-black hc:border hc:border-black hc:hover:bg-[#00ffff] px-4 py-2 rounded text-sm font-bold transition"
+                >
+                    Accept
+                </button>
+                <button
+                    data-action="close-cookies"
+                    class="bg-gray-600 hover:bg-gray-700 hc:bg-transparent hc:border hc:border-white hc:hover:bg-white hc:hover:text-black px-4 py-2 rounded text-sm transition"
+                >
+                    Decline
+                </button>
+            </div>
+        </div>
+
+        <div
+            id="a11y-toolbar"
+            class="fixed right-0 top-20 bg-white dark:bg-gray-800 hc:bg-black border-l-4 border-blue-600 dark:border-indigo-500 hc:border hc:border-white hc:border-l-[4px] hc:border-l-[#00ffff] shadow-xl p-4 z-40 transform translate-x-full transition-transform duration-300 w-64"
+        >
+            <h3
+                class="font-bold text-lg mb-4 text-gray-900 dark:text-white hc:text-white"
+            >
+                Accessibility
+            </h3>
+            <div class="space-y-3">
+                <button
+                    data-action="toggle-dark"
+                    class="w-full flex items-center gap-2 p-2 border dark:border-gray-600 hc:border-white hc:text-white rounded hc:rounded-none hover:bg-gray-100 dark:hover:bg-gray-700 hc:hover:bg-[#00ffff] hc:hover:text-black hc:hover:border-[#00ffff] text-gray-800 dark:text-gray-200 transition"
+                >
+                    <i data-lucide="moon"></i> Dark Mode
+                </button>
+                <button
+                    data-action="toggle-contrast"
+                    class="w-full flex items-center gap-2 p-2 border dark:border-gray-600 hc:border-white hc:text-white rounded hc:rounded-none hover:bg-gray-100 dark:hover:bg-gray-700 hc:hover:bg-[#00ffff] hc:hover:text-black hc:hover:border-[#00ffff] text-gray-800 dark:text-gray-200 transition"
+                >
+                    <i data-lucide="sun"></i> Toggle Contrast
+                </button>
+                <button
+                    data-action="toggle-text"
+                    class="w-full flex items-center gap-2 p-2 border dark:border-gray-600 hc:border-white hc:text-white rounded hc:rounded-none hover:bg-gray-100 dark:hover:bg-gray-700 hc:hover:bg-[#00ffff] hc:hover:text-black hc:hover:border-[#00ffff] text-gray-800 dark:text-gray-200 transition"
+                >
+                    <i data-lucide="type"></i> Toggle Text Size
+                </button>
+            </div>
+            <button
+                data-action="toggle-a11y"
+                class="absolute -left-12 top-0 bg-blue-600 dark:bg-indigo-600 hc:bg-black hc:border hc:border-white hc:border-r-0 text-white p-3 rounded-l-md hc:rounded-none shadow-lg hover:bg-blue-700 dark:hover:bg-indigo-700 hc:hover:bg-[#00ffff] hc:hover:text-black transition"
+                aria-label="Open Accessibility Menu"
+            >
+                <i data-lucide="accessibility"></i>
+            </button>
+        </div>
+
+        <nav
+            class="sticky top-0 z-30 bg-white/90 dark:bg-gray-900/90 hc:bg-black backdrop-blur-md border-b border-gray-200 dark:border-gray-800 hc:border-white hc:border-b-2 shadow-sm transition-colors duration-300"
+        >
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <a
+                        href="index.html"
+                        class="flex-shrink-0 flex items-center cursor-pointer"
+                    >
+                        <i
+                            data-lucide="music"
+                            class="h-8 w-8 text-indigo-600 dark:text-indigo-400 hc:text-white mr-2"
+                        ></i>
+                        <span
+                            class="font-bold text-2xl tracking-tighter uppercase text-gray-900 dark:text-white hc:text-white"
+                            >Retro<span
+                                class="text-indigo-600 dark:text-indigo-400 hc:text-white"
+                                >Fest</span
+                            ></span
+                        >
+                    </a>
+
+                    <div
+                        class="hidden md:flex space-x-8 items-center"
+                        role="navigation"
+                        aria-label="Main Navigation"
+                    >
+                        <a
+                            href="index.html"
+                            class="nav-link text-indigo-600 dark:text-indigo-400 hc:text-[#00ffff] font-medium transition"
+                            >Home</a
+                        >
+
+                        <div class="relative group">
+                            <a
+                                href="festivals.html"
+                                class="nav-link text-gray-700 dark:text-gray-300 hc:text-white hover:text-indigo-600 dark:hover:text-indigo-400 hc:hover:text-[#00ffff] font-medium flex items-center gap-1 transition group-hover:hc:text-[#00ffff]"
+                            >
+                                Festivals
+                                <i
+                                    data-lucide="chevron-down"
+                                    class="w-4 h-4 hc:stroke-white group-hover:hc:stroke-[#00ffff]"
+                                ></i>
+                            </a>
+                            <div
+                                role="menu"
+                                class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 hc:bg-black hc:border-2 hc:border-white hc:rounded-none hc:shadow-none rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border dark:border-gray-700 z-50"
+                            >
+                                <a
+                                    href="festivals.html#woodstock"
+                                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hc:text-white hc:border-b hc:border-[#333] hover:bg-gray-100 dark:hover:bg-gray-700 hc:hover:bg-[#00ffff] hc:hover:text-black"
+                                    >Woodstock '69</a
+                                >
+                                <a
+                                    href="festivals.html#liveaid"
+                                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hc:text-white hc:border-b hc:border-[#333] hover:bg-gray-100 dark:hover:bg-gray-700 hc:hover:bg-[#00ffff] hc:hover:text-black"
+                                    >Live Aid '85</a
+                                >
+                                <a
+                                    href="festivals.html#monsters"
+                                    class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hc:text-white hc:border-b hc:border-[#333] hover:bg-gray-100 dark:hover:bg-gray-700 hc:hover:bg-[#00ffff] hc:hover:text-black"
+                                    >Monsters of Rock</a
+                                >
+                            </div>
+                        </div>
+
+                        <a
+                            href="form.html"
+                            class="nav-link text-gray-700 dark:text-gray-300 hc:text-white hover:text-indigo-600 dark:hover:text-indigo-400 hc:hover:text-[#00ffff] font-medium transition"
+                            >Request Content</a
+                        >
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="hidden md:flex items-center bg-gray-100 dark:bg-gray-800 hc:bg-black hc:border hc:border-white rounded-full px-3 py-1 border border-transparent dark:border-gray-700"
+                        >
+                            <i
+                                data-lucide="search"
+                                class="w-4 h-4 text-gray-500 dark:text-gray-400 hc:text-white"
+                            ></i>
+                            <input
+                                type="text"
+                                id="desktop-search"
+                                placeholder="Search archives..."
+                                class="bg-transparent border-none focus:ring-0 text-sm ml-2 w-32 text-gray-800 dark:text-gray-200 hc:text-white hc:placeholder-white/70 outline-none"
+                            />
+                        </div>
+                        <button
+                            class="md:hidden p-2 text-gray-700 dark:text-gray-300 hc:text-white"
+                            data-action="toggle-menu"
+                        >
+                            <i data-lucide="menu" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden bg-white dark:bg-gray-900 hc:bg-black hc:border-b-2 hc:border-white border-t dark:border-gray-800 p-4 space-y-3"
+            >
+                <a
+                    href="index.html"
+                    class="block w-full font-medium p-2 text-indigo-600 dark:text-indigo-400 hc:text-[#00ffff]"
+                    >Home</a
+                >
+                <a
+                    href="festivals.html"
+                    class="block w-full font-medium p-2 text-gray-800 dark:text-gray-200 hc:text-white"
+                    >Festivals</a
+                >
+                <a
+                    href="form.html"
+                    class="block w-full font-medium p-2 text-gray-800 dark:text-gray-200 hc:text-white"
+                    >Contact</a
+                >
+                <input
+                    type="text"
+                    id="mobile-search"
+                    placeholder="Search..."
+                    class="w-full border dark:border-gray-700 hc:border-white hc:bg-black hc:text-white bg-white dark:bg-gray-800 p-2 rounded hc:rounded-none text-gray-800 outline-none focus:border-indigo-500"
+                />
+            </div>
+        </nav>
+
+        <main class="flex-grow relative z-0">
+            <div
+                class="fixed inset-0 -z-10 dark:brightness-50 hc:opacity-20 bg-cover bg-center bg-no-repeat transition-all duration-700"
+                style="
+                    background-image: url('./assets/images/live_aid/hero_crowd_photo.webp');
+                "
+            ></div>
+
+            <section
+                id="view-home"
+                class="view-section animate-fade-in relative z-10"
+            >
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-[#fff6e6] via-[#fff6e6]/40 to-transparent dark:from-gray-900 dark:via-gray-900/80 dark:to-transparent -z-10"
+                ></div>
+
+                <div
+                    class="relative py-24 px-6 text-center overflow-hidden hc:border-b hc:border-white"
+                >
+                    <div class="relative z-10 max-w-3xl mx-auto">
+                        <h1
+                            class="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white hc:text-[#00ffff]"
+                        >
+                            Relive the Rhythm
+                        </h1>
+                        <p
+                            class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-200 hc:text-white"
+                        >
+                            The ultimate archive of the world's most legendary
+                            music festivals. Travel back in time from 1969 to
+                            1991.
+                        </p>
+                        <a
+                            href="festivals.html"
+                            class="inline-block bg-indigo-600 hover:bg-indigo-700 hc:bg-white hc:text-black hc:border-2 hc:border-white hc:hover:bg-[#00ffff] text-white font-bold py-3 px-8 rounded-full hc:rounded-none transition transform hover:scale-105 shadow-lg hc:shadow-none"
+                        >
+                            Enter the Time Machine
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="relative max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-3 gap-8 z-10"
+                >
+                    <div
+                        class="brightness-100 text-center p-6 border dark:border-gray-700 hc:border-white rounded-xl hc:rounded-none hover:shadow-lg hc:hover:shadow-none transition bg-white dark:bg-gray-800 hc:bg-black text-gray-800 dark:text-gray-200 hc:text-white"
+                    >
+                        <div
+                            class="bg-amber-100 dark:bg-amber-900/30 hc:bg-transparent hc:border hc:border-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-amber-800 dark:text-amber-400 hc:text-[#00ffff]"
+                        >
+                            <i data-lucide="guitar" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">
+                            Iconic Performances
+                        </h3>
+                        <p
+                            class="text-gray-600 dark:text-gray-400 hc:text-white"
+                        >
+                            Discover the lineups that changed music history
+                            forever.
+                        </p>
+                    </div>
+                    <div
+                        class="brightness-100 text-center p-6 border dark:border-gray-700 hc:border-white rounded-xl hc:rounded-none hover:shadow-lg hc:hover:shadow-none transition bg-white dark:bg-gray-800 hc:bg-black text-gray-800 dark:text-gray-200 hc:text-white"
+                    >
+                        <div
+                            class="bg-purple-100 dark:bg-purple-900/30 hc:bg-transparent hc:border hc:border-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-purple-800 dark:text-purple-400 hc:text-[#00ffff]"
+                        >
+                            <i data-lucide="film" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Rare Footage</h3>
+                        <p
+                            class="text-gray-600 dark:text-gray-400 hc:text-white"
+                        >
+                            Watch restored footage from the original broadcasts.
+                        </p>
+                    </div>
+                    <div
+                        class="brightness-100 text-center p-6 border dark:border-gray-700 hc:border-white rounded-xl hc:rounded-none hover:shadow-lg hc:hover:shadow-none transition bg-white dark:bg-gray-800 hc:bg-black text-gray-800 dark:text-gray-200 hc:text-white"
+                    >
+                        <div
+                            class="bg-blue-100 dark:bg-blue-900/30 hc:bg-transparent hc:border hc:border-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-800 dark:text-blue-400 hc:text-[#00ffff]"
+                        >
+                            <i data-lucide="book-open" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">
+                            Historical Context
+                        </h3>
+                        <p
+                            class="text-gray-600 dark:text-gray-400 hc:text-white"
+                        >
+                            Understand the culture and politics behind the
+                            music.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer
+            class="bg-gray-900 dark:bg-black hc:bg-black hc:border-t hc:border-white text-gray-400 hc:text-white py-12 transition-colors duration-300 relative z-10"
+        >
+            <div
+                class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm"
+            >
+                <div>
+                    <h4
+                        class="text-white font-bold text-lg mb-4 hc:text-[#00ffff]"
+                    >
+                        RetroFest
+                    </h4>
+                    <p>
+                        Preserving the legacy of music's greatest moments for
+                        the next generation.
+                    </p>
+                </div>
+                <div>
+                    <h4
+                        class="text-white font-bold text-lg mb-4 hc:text-[#00ffff]"
+                    >
+                        Links
+                    </h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <button
+                                data-action="legal"
+                                data-payload="privacy"
+                                class="hover:text-white hc:hover:text-[#00ffff] text-left transition"
+                            >
+                                Privacy Policy
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                data-action="legal"
+                                data-payload="terms"
+                                class="hover:text-white hc:hover:text-[#00ffff] text-left transition"
+                            >
+                                Terms of Service
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                data-action="toggle-a11y"
+                                class="hover:text-white hc:hover:text-[#00ffff] text-left transition"
+                            >
+                                Accessibility Statement
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        class="text-white font-bold text-lg mb-4 hc:text-[#00ffff]"
+                    >
+                        Connect
+                    </h4>
+                    <div class="flex space-x-4 items-center">
+                        <a
+                            href="#"
+                            class="hover:text-white hc:hover:text-[#00ffff] transition"
+                            ><i data-lucide="youtube"></i
+                        ></a>
+                        <a
+                            href="#"
+                            class="hover:text-white hc:hover:text-[#00ffff] transition"
+                            ><i data-lucide="instagram"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="text-center mt-12 border-t border-gray-800 hc:border-white pt-8"
+            >
+                &copy; 2026 RetroFest Archives. All rights reserved.
+            </div>
+        </footer>
+
+        <div
+            data-action="close-modal"
+            id="dynamic-modal"
+            role="dialog"
+            aria-modal="true"
+            class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md items-center justify-center p-4"
+        ></div>
+    </body>
+</html>

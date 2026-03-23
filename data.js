@@ -1,0 +1,153 @@
+// --- FESTIVAL DATA ---
+const festivalData = {
+    // --- WOODSTOCK '69 ---
+    woodstock: {
+        title: "Woodstock Music & Art Fair",
+        desc: "3 Days of Peace & Music. An aquarian exposition that changed the world.",
+        about: '<h1>Woodstock Music & Art Fair (1969)</h1>\n<strong>The Weekend That Defined a Generation</strong>\n<h2>The Origin & The Chaos</h2>\n<p>Woodstock was arguably the most successful "disaster" in history. It was organised by four young men—John Roberts, Joel Rosenman, Artie Kornfeld, and Michael Lang—who originally wanted to build a recording studio in Woodstock, NY. To raise funds, they decided to throw a festival.</p>\n<ul>\n<li><strong>The Venue Swap:</strong> The festival was originally set for Wallkill, NY, but the town panicked and banned it just weeks before the date. Dairy farmer Max Yasgur stepped in at the last minute, offering his alfalfa field in Bethel, NY.</li>\n<li><strong>The "Free" Concert:</strong> The organisers sold tickets beforehand, but the fencing wasn\'t finished when thousands of fans arrived days early. The crowd tore down the flimsy barriers. Organisers were forced to declare it a free concert, leading to financial ruin (temporarily) for the backers.</li>\n<li><strong>Logistical Nightmare:</strong> The New York State Thruway became a parking lot. Musicians had to be flown in by Army helicopters because the roads were impassable. There was almost no food or water until the "Hog Farm" commune (led by counterculture icon Wavy Gravy) set up a "freak out tent" and distributed granola and brown rice to the starving masses.</li>\n</ul>\n<h2>Deep Dive into Performances</h2>\n<ul>\n<li><strong>Richie Havens (The Opener):</strong> The scheduled openers were stuck in traffic. Havens was thrown onto the stage and told to keep playing. He ran out of songs and improvised "Freedom" on the spot, creating an anthem of the era.</li>\n<li><strong>The Who vs. Abbie Hoffman:</strong> During The Who\'’\'s set, activist Abbie Hoffman ran onto the stage to protest the imprisonment of John Sinclair. Guitarist Pete Townshend, annoyed by the interruption during a musical peak, famously hit Hoffman with his guitar and kicked him off stage, yelling, "Get off my f***ing stage!"</li>\n<li><strong>Crosby, Stills, Nash & Young:</strong> This was only their second gig ever. Stephen Stills famously told the crowd, "We\'re scared s***less."</li>\n<li><strong>Joe Cocker:</strong> His cover of "With a Little Help from My Friends" featured an air-guitar convulsion performance style that became iconic.</li>\n</ul>\n<h2>The "Brown Acid" Warning</h2>\n<p>Chip Monck, the stage lighting designer who was drafted as the MC because the original announcer forgot to show up, delivered the famous warning:</p>\n<blockquote>"To get back to the warning that I\'ve received, you might take it with however many grains of salt you wish... the brown acid that is circulating around us is not specifically too good. It\'s suggested that you do stay away from that."</blockquote>\n',
+        bg: "./assets/images/woodstock/woodstock_field_photo.webp",
+        wiki: "https://en.wikipedia.org/wiki/Woodstock",
+        items: [
+            {
+                id: 1,
+                title: "Santana",
+                role: "Breakout Performance",
+                image: "./assets/images/woodstock/santana_photo.webp",
+                video: "./assets/videos/woodstock/santana_video.mp4",
+                details:
+                    "A legendary performance of 'Soul Sacrifice' that launched their career before their first album was even released.",
+                year: "1969",
+                location: "Bethel, NY",
+                lineup: ["Carlos Santana", "Gregg Rolie", "Michael Shrieve"],
+                alt: "Image of Santana",
+            },
+            {
+                id: 2,
+                title: "Joe Cocker",
+                role: "Soul Power",
+                image: "./assets/images/woodstock/joe_cocker_photo.webp",
+                video: "./assets/videos/woodstock/joe_cocker_video.mp4",
+                details:
+                    "His gritty, emotional cover of 'With A Little Help From My Friends' became one of the festival's defining anthems.",
+                year: "1969",
+                location: "Bethel, NY",
+                lineup: ["Joe Cocker", "The Grease Band"],
+                alt: "Joe Cocker singing into the microphone",
+            },
+            {
+                id: 3,
+                title: "Crosby, Stills & Nash",
+                role: "Folk Supergroup",
+                image: "./assets/images/woodstock/csn_photo.webp",
+                video: "./assets/videos/woodstock/csn_video.mp4",
+                details:
+                    "Performing 'Long Time Gone' at their second-ever gig, marking the beginning of a folk-rock legacy.",
+                year: "1969",
+                location: "Bethel, NY",
+                lineup: ["David Crosby", "Stephen Stills", "Graham Nash"],
+                alt: "The hill featured in their 'Long Time Gone' music video",
+            },
+        ],
+    },
+
+    // --- LIVE AID '85 ---
+    liveaid: {
+        title: "Live Aid",
+        desc: "The Global Jukebox. Raising funds for Ethiopian famine relief.",
+        about: "<h1>Live Aid (1985)</h1> <strong>The Day Music Changed the World</strong> <h2>The Mission & The Logistics</h2> <p>If Woodstock was a happy accident, Live Aid was a miracle of sheer will. Organised by Bob Geldof and Midge Ure in just 10 weeks to fight the Ethiopian famine, it was billed as 'The Global Jukebox'. It became one of the largest-scale satellite link-ups and television broadcasts of all time, with an estimated global audience of 1.9 billion.</p> <ul> <li><strong>The Dual Stage:</strong> The concert was held simultaneously at Wembley Stadium in London (72,000 people) and John F. Kennedy Stadium in Philadelphia (100,000 people). Acts had to adhere to a strict rotating stage schedule—no soundchecks were allowed, which terrified many artists.</li> <li><strong>The Concorde Dash:</strong> Phil Collins performed at Wembley, then immediately hopped on a Concorde flight to New York, took a helicopter to Philadelphia, and performed again at JFK Stadium the same day. He was the only artist to play both venues.</li> <li><strong>The Technology Risk:</strong> The satellite feed was incredibly fragile. During The Who's set in London, a blown fuse cut the TV feed temporarily. The organisers were constantly terrified the entire global broadcast would go black.</li> </ul> <h2>Defining Performances</h2> <ul> <li><strong>Queen (The Champions):</strong> In just 20 minutes, Queen stole the show. Freddie Mercury commanded the Wembley crowd with his famous 'Ay-Oh' call-and-response. It is widely considered the greatest live rock performance in history.</li> <li><strong>U2 (The Leap):</strong> During a performance of 'Bad', Bono broke protocol and leapt off the stage to dance with a girl in the crowd. The diversion took so long they had to cut their hit 'Pride (In the Name of Love)' from the setlist. The band thought they had blown it, but the moment of connection made them global superstars overnight.</li> <li><strong>Led Zeppelin (The Disaster):</strong> Reunited for the first time since drummer John Bonham's death, with Phil Collins sitting in on drums, the set was marred by lack of rehearsal, bad monitors, and an out-of-tune Jimmy Page. The band refused to let the footage be included on the official DVD release years later.</li> <li><strong>Run-D.M.C.:</strong> Representing the rising power of hip-hop, they were the only rap act on the main bill in Philadelphia, confusing some rockers but signaling a massive shift in the musical landscape.</li> </ul> <h2>The &quot;Give Us The Money&quot; Moment</h2> <p>Bob Geldof, exhausted and frustrated by the polite pacing of the appeal, famously lost his temper during a BBC interview segment, creating the event's most enduring myth.</p> <blockquote>'People are dying NOW. Give us the money now. There are people dying... F*** the address, just give us the phone numbers!'</blockquote>",
+        bg: "./assets/images/live_aid/performers_on_stage_photo.webp",
+        wiki: "https://en.wikipedia.org/wiki/Live_Aid",
+        items: [
+            {
+                id: 4,
+                title: "Queen",
+                role: "Bohemian Rhapsody",
+                image: "./assets/images/live_aid/queen_rhapsody_photo.webp",
+                video: "./assets/videos/live_aid/queen_rhapsody_video.mp4",
+                details:
+                    "The opening ballad that had 72,000 people singing in unison. A masterclass in stadium rock.",
+                year: "1985",
+                location: "Wembley Stadium",
+                lineup: [
+                    "Freddie Mercury",
+                    "Brian May",
+                    "Roger Taylor",
+                    "John Deacon",
+                ],
+                alt: "Photo of a member of the crowd holding a scarf that says 'QUEEN WORKS'",
+            },
+            {
+                id: 5,
+                title: "Queen",
+                role: "Radio Ga Ga",
+                image: "./assets/images/live_aid/queen_gaga_photo.webp",
+                video: "./assets/videos/live_aid/queen_gaga_video.mp4",
+                details:
+                    "The iconic moment where the entire crowd clapped in sync.",
+                year: "1985",
+                location: "Wembley Stadium",
+                lineup: ["Freddie Mercury", "Brian May", "Roger Taylor"],
+                alt: "Brian May and Freddie Mercury on stage",
+            },
+            {
+                id: 6,
+                title: "Event Highlights",
+                role: "Iconic Moments",
+                image: "./assets/images/live_aid/highlights_photo.webp",
+                video: "./assets/videos/live_aid/highlights_video.mp4",
+                details: "A compilation of the day that rocked the world.",
+                year: "1985",
+                location: "Global",
+                lineup: ["Various Artists"],
+                alt: "Ariel photo of the stadium during the event",
+            },
+        ],
+    },
+
+    // --- MONSTERS OF ROCK '91 ---
+    monsters: {
+        title: "Monsters of Rock",
+        desc: "The ultimate heavy metal celebration in Tushino Airfield, Moscow.",
+        about: "<h1>Monsters of Rock (1991)</h1> <strong>The Concert That Shook the Iron Curtain</strong> <h2>The Collapse & The Airfield</h2> <p>Held just weeks after the failed August Putsch that signaled the end of the Soviet Union, this free festival at Tushino Airfield wasn't just a concert; it was a victory lap for Western culture. While official estimates vary, it is widely believed that over 1.6 million people attended, making it one of the largest concerts in human history.</p> <ul> <li><strong>The 'Security':</strong> There were no bouncers or event staff. Crowd control was handled by the Soviet Army. Thousands of soldiers, trucks, and even tanks lined the perimeter. The soldiers, often as young as the fans, were frequently seen beating the crowd with rubber truncheons to maintain order, though many eventually abandoned their posts to join the party.</li> <li><strong>The Scale:</strong> The crowd was so vast it stretched to the horizon. There were no amenities—no toilets, no food stalls, and no water. Fans camped out for days, creating bonfires from debris to stay warm in the Russian autumn chill.</li> <li><strong>The Local Heroes:</strong> While the Western giants stole the headlines, the Soviet metal band E.S.T. played a crucial role, bridging the gap between the local underground scene and the international superstars.</li> </ul> <h2>The Heavy Hitters</h2> <ul> <li><strong>Pantera (The Domination):</strong> The band was relatively new to the global stage, but their performance is legendary for its ferocity. Frontman Phil Anselmo commanded the endless sea of people, and the footage of 'Cowboys from Hell' shows a level of mosh-pit density that has arguably never been seen since.</li> <li><strong>Metallica (The Peak):</strong> Touring on the newly released 'Black Album', Metallica was at the absolute height of their powers. When they played 'Enter Sandman' and 'Creeping Death', the energy was terrified and electric. It is often cited by the band members as the most surreal moment of their careers.</li> <li><strong>AC/DC (The Headliners):</strong> They brought their full Western stage production, including the massive 'Hells Bells' and the cannons for 'For Those About to Rock'. Seeing actual artillery fired for entertainment in a military airfield, in a country previously locked in a Cold War with the West, was a powerful symbolic moment.</li> </ul> <h2>The Soldier's Surrender</h2> <p>AC/DC frontman Brian Johnson recalled the moment the military presence dissolved into the fandom, symbolizing the end of an era:</p> <blockquote>'You saw the soldiers, the Red Army guys... and they were taking their caps off. They were shaking their heads and they were smiling. And the next thing you know, they were drinking the wine and the vodka with the kids.'</blockquote>",
+        bg: "./assets/images/MOR/Dave_Hill_photo.webp",
+        wiki: "https://en.wikipedia.org/wiki/Monsters_of_Rock",
+        items: [
+            {
+                id: 7,
+                title: "Metallica",
+                role: "Event Highlights",
+                image: "./assets/images/MOR/metallica_highlights_photo.webp",
+                video: "./assets/videos/MOR/metallica_highlights_video.mp4",
+                details: "Chaotic energy at Tushino Airfield.",
+                year: "1991",
+                location: "Moscow",
+                lineup: ["James Hetfield", "Lars Ulrich", "Kirk Hammett"],
+                alt: "A photo from the ground showing soviet soldiers and helicopters",
+            },
+            {
+                id: 8,
+                title: "Metallica",
+                role: "Enter Sandman",
+                image: "./assets/images/MOR/metallica_sandman_photo.webp",
+                video: "./assets/videos/MOR/metallica_sandman_video.mp4",
+                details: "The massive hit showcased to 1.6 million people.",
+                year: "1991",
+                location: "Moscow",
+                lineup: ["James Hetfield", "Lars Ulrich"],
+                alt: "A photo showing the crowd from the back",
+            },
+            {
+                id: 9,
+                title: "AC/DC",
+                role: "LIVE Moscow, Russia, September 28, 1991",
+                image: "./assets/images/MOR/ACDC_MOR_photo.webp",
+                video: "./assets/videos/MOR/ACDC_MOR_video.mp4",
+                details: "The complete remastered set in 4K.",
+                year: "1991",
+                location: "Moscow",
+                lineup: ["AC/DC"],
+                alt: "A photo from Lars Ulrich's view of the crowd",
+            },
+        ],
+    },
+};

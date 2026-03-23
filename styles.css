@@ -1,0 +1,232 @@
+/* --- GLOBAL VARIABLES & RESETS --- */
+:root {
+    --accent-color: #f59e0b;
+    --font-main: "Inter", sans-serif;
+    --font-heading: "Righteous", cursive;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
+
+/* --- ACCESSIBILITY --- */
+/* Scale the entire coordinate system of the page */
+html.large-text {
+    font-size: 125%;
+}
+
+/* --- THEMING CLASSES (APPLIED TO #FESTIVAL-CONTAINER) --- */
+
+/* Woodstock */
+.theme-woodstock {
+    --bg-card: #fdf6e3;
+    --text-card: #3e2723;
+    --border-card: #8d6e63;
+    font-family: "Abril Fatface", cursive;
+}
+
+.theme-woodstock .card-front {
+    background: linear-gradient(135deg, #d7ccc8, #a1887f);
+}
+
+.theme-woodstock button {
+    background-color: #5d4037;
+    color: #fff;
+    border-radius: 999px;
+}
+
+/* Live Aid */
+.theme-liveaid {
+    --bg-card: #ffffff;
+    --text-card: #1a202c;
+    --border-card: #fbbf24;
+    font-family: "Righteous", cursive;
+    background-image: radial-gradient(#fbbf24 15%, transparent 16%),
+        radial-gradient(#3b82f6 15%, transparent 16%);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.theme-liveaid .card-front {
+    background: linear-gradient(135deg, #fef3c7, #93c5fd);
+}
+
+.theme-liveaid button {
+    background-color: #2563eb;
+    color: #fff;
+    box-shadow: 4px 4px 0px #fbbf24;
+    border-radius: 0;
+}
+
+/* Monsters of Rock */
+.theme-monsters {
+    --bg-card: #1a1a1a;
+    --text-card: #e5e5e5;
+    --border-card: #dc2626;
+    font-family: "Metal Mania", cursive;
+    background-color: #000;
+}
+
+.theme-monsters .card-front {
+    background: linear-gradient(135deg, #262626, #7f1d1d);
+    color: white;
+}
+
+.theme-monsters button {
+    background-color: #991b1b;
+    color: white;
+    border: 2px solid #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- UI COMPONENTS --- */
+
+/* Flip Card 3D */
+.perspective-1000 {
+    perspective: 1000px;
+}
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+.backface-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+.festival-card.flipped .preserve-3d {
+    transform: rotateY(180deg);
+}
+
+/* Custom Elements */
+/* --- ACCORDION & ARTICLE STYLES --- */
+details > summary {
+    list-style: none; /* Hide default arrow in modern browsers */
+}
+details > summary::-webkit-details-marker {
+    display: none; /* Hide default arrow in WebKit */
+}
+
+.festival-article h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.festival-article h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.festival-article strong {
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.festival-article p {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.festival-article ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.festival-article li {
+    margin-bottom: 0.75rem;
+}
+
+.festival-article li strong {
+    display: inline;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.festival-article blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Scroll Fade Animations */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Mobile Menu */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.menu-animate {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute !important;
+}
