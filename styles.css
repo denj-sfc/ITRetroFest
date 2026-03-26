@@ -19,12 +19,11 @@ h3 {
 }
 
 /* --- ACCESSIBILITY --- */
-/* Scale the entire coordinate system of the page */
 html.large-text {
     font-size: 125%;
 }
 
-/* --- THEMING CLASSES (APPLIED TO #FESTIVAL-CONTAINER) --- */
+/* --- THEMING CLASSES --- */
 
 /* Woodstock */
 .theme-woodstock {
@@ -91,7 +90,6 @@ html.large-text {
 
 /* --- UI COMPONENTS --- */
 
-/* Flip Card 3D */
 .perspective-1000 {
     perspective: 1000px;
 }
@@ -109,13 +107,12 @@ html.large-text {
     transform: rotateY(180deg);
 }
 
-/* Custom Elements */
 /* --- ACCORDION & ARTICLE STYLES --- */
 details > summary {
-    list-style: none; /* Hide default arrow in modern browsers */
+    list-style: none;
 }
 details > summary::-webkit-details-marker {
-    display: none; /* Hide default arrow in WebKit */
+    display: none;
 }
 
 .festival-article h1 {
@@ -173,7 +170,6 @@ details > summary::-webkit-details-marker {
     border-radius: 0 8px 8px 0;
 }
 
-/* Hide scrollbar but keep functionality */
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -208,7 +204,7 @@ details > summary::-webkit-details-marker {
     transform: translateY(0);
 }
 
-/* Smooth Mobile Menu */
+/* Mobile Menu */
 @keyframes slideDown {
     from {
         opacity: 0;

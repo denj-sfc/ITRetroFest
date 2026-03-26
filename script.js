@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("retrofest_large_text") === "true")
         document.documentElement.classList.add("large-text");
 
-    // --- COOKIE BANNER (With Memory) ---
+    // --- COOKIE BANNER ---
     if (!localStorage.getItem("retrofest_cookie_consent")) {
         setTimeout(() => {
             document
@@ -20,16 +20,67 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }
 
-    // --- ROUTER INIT (MPA Hash Based) ---
-    window.addEventListener("hashchange", handleLocation);
+    // --- ROUTER INIT ---
+    window.addEventListener("hashchange", () => {
+        const url = new URL(window.location);
+        if (url.searchParams.has("search")) {
+            url.searchParams.delete("search");
+            window.history.replaceState({}, "", url);
+        }
+
+        const ds = document.getElementById("desktop-search");
+        const ms = document.getElementById("mobile-search");
+        if (ds) ds.value = "";
+        if (ms) ms.value = "";
+
+        handleLocation();
+    });
     handleLocation();
 
     // --- SEARCH LOGIC ---
     const desktopSearch = document.getElementById("desktop-search");
-    if (desktopSearch)
-        desktopSearch.addEventListener("input", (e) =>
-            handleSearch(e.target.value)
-        );
+    const mobileSearch = document.getElementById("mobile-search");
+
+    function setupSearch(inputElem) {
+        if (!inputElem) return;
+
+        const isFestivalPage = !!document.getElementById("festival-container");
+
+        if (isFestivalPage) {
+            inputElem.addEventListener("input", (e) => {
+                const val = e.target.value;
+                if (desktopSearch && desktopSearch !== inputElem)
+                    desktopSearch.value = val;
+                if (mobileSearch && mobileSearch !== inputElem)
+                    mobileSearch.value = val;
+                handleSearch(val);
+            });
+        } else {
+            inputElem.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    const query = e.target.value.trim();
+                    if (query) {
+                        window.location.href = `festivals.html?search=${encodeURIComponent(
+                            query
+                        )}`;
+                    }
+                }
+            });
+        }
+    }
+
+    setupSearch(desktopSearch);
+    setupSearch(mobileSearch);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get("search");
+
+    if (searchQuery && document.getElementById("festival-container")) {
+        if (desktopSearch) desktopSearch.value = searchQuery;
+        if (mobileSearch) mobileSearch.value = searchQuery;
+
+        setTimeout(() => handleSearch(searchQuery), 50);
+    }
 
     // --- FORM HANDLING ---
     const contactForm = document.getElementById("contact-form");
@@ -131,7 +182,6 @@ function setTheme(themeName) {
 
     const data = festivalData[themeName];
 
-    // Apply background to the independent fixed layer
     if (bgLayer) {
         bgLayer.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${data.bg}')`;
     }
@@ -226,7 +276,16 @@ function handleSearch(query) {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
         const term = query.toLowerCase().trim();
-        if (term.length === 0) return setTheme(currentTheme);
+        const url = new URL(window.location);
+
+        if (term.length === 0) {
+            url.searchParams.delete("search");
+            window.history.replaceState({}, "", url);
+            return setTheme(currentTheme);
+        } else {
+            url.searchParams.set("search", term);
+            window.history.replaceState({}, "", url);
+        }
 
         const allItems = [];
         Object.values(festivalData).forEach((theme) =>
@@ -240,13 +299,14 @@ function handleSearch(query) {
                 item.details.toLowerCase().includes(term)
         );
 
-        document.getElementById(
-            "festival-title"
-        ).textContent = `Searching: "${query}"`;
-        document.getElementById(
-            "festival-desc"
-        ).textContent = `Found ${results.length} matches.`;
-        document.getElementById("festival-about").innerHTML = "";
+        const titleEl = document.getElementById("festival-title");
+        const descEl = document.getElementById("festival-desc");
+        const aboutEl = document.getElementById("festival-about");
+
+        if (titleEl) titleEl.textContent = `Searching: "${query}"`;
+        if (descEl) descEl.textContent = `Found ${results.length} matches.`;
+        if (aboutEl) aboutEl.innerHTML = "";
+
         renderCards(results);
     }, 300);
 }
